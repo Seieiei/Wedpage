@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Select a new car from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+  <option value="Audi">Audi</option>
+  <option value="BMW">BMW</option>
+  <option value="Mercedes">Mercedes</option>
+  <option value="Volvo">Volvo</option>
+</select>
+
+<select id="myOption" onchange="myFunction()">
+  <option value="Open">Open</option>
+  <option value="Sound">Sound</option>
+  <option value="Action">Action</option>
+  <option value="Sense">Sense</option>
+</select>
+
+<select id="Color" onchange="myFunction()">
+  <option value="Blue">Blue</option>
+  <option value="Rad">Rad</option>
+  <option value="Pink">Pink</option>
+  <option value="Yellow">Yellow</option>
+</select>
+
+<p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>
+<p id="value"></p>
+
+<script>
+var cars = []
+cars["Audi"]=1000
+cars["BMW"]=500
+cars["Mercedes"]=5000
+cars["Volvo"]=2000
+
+var Options = []
+Options["Open"]=1500
+Options["Sound"]=2500
+Options["Action"]=3200
+Options["Sense"]=4300
+
+function myFunction() {
+  var x = document.getElementById("mySelect").value;
+  var y = document.getElementById("myOption").value;
+  document.getElementById("demo").innerHTML = "You selected: " + x + y;
+  document.getElementById("value").innerHTML = "cost: " + x + cars[x] + Options[y];
+}
+</script>
+
+</body>
+</html>
+
